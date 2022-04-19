@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,6 +35,9 @@ public class RegistrationActivity extends AppCompatActivity {
     private String name, email, phone, password;
 
     private ProgressDialog progressDialog;
+    private RadioGroup radioGroupRole;
+    private RadioButton radioButtonRole;
+    private int selectRoleId;
 
 
     @Override
@@ -53,6 +58,7 @@ public class RegistrationActivity extends AppCompatActivity {
         etPhone = findViewById(R.id.et_register_phone);
         etPassword = findViewById(R.id.et_register_password);
         btnRegister = findViewById(R.id.btn_register);
+        radioGroupRole = findViewById(R.id.radio_group_role);
 
         tvAlreadyRegistered.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,11 +76,14 @@ public class RegistrationActivity extends AppCompatActivity {
                 name = etName.getText().toString();
                 email = etEmail.getText().toString();
                 phone = etPhone.getText().toString();
-
                 password = etPassword.getText().toString();
+                selectRoleId = radioGroupRole.getCheckedRadioButtonId();
+                radioButtonRole = (RadioButton) findViewById(selectRoleId);
 
 
-                if (name.isEmpty()){
+                if (selectRoleId == -1){
+                    appUtils.showToast("Please enter role");
+                }else if (name.isEmpty()){
                     appUtils.showToast("Please enter name");
                 }else if(email.isEmpty()){
                     appUtils.showToast("Please enter email");
@@ -86,7 +95,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     appUtils.showToast("Password should be more than 8 characters");
                 }
                 else {
-                    userRegisterFun();
+                    userRegisterFun(radioButtonRole);
                 }
 
             }
@@ -94,14 +103,16 @@ public class RegistrationActivity extends AppCompatActivity {
 
     }
 
-    public void userRegisterFun(){
+    public void userRegisterFun(RadioButton radioButton){
+
+        int roleId = radioButton.getText().equals("Tourist") ? 1 : 2;
 
         progressDialog.setMessage("Registering...");
         progressDialog.show();
 
         final NetworkAPI networkAPI = ApiClient.getClient().create(NetworkAPI.class);
 
-        Call<UserResponse> userRegisterResponseCall = networkAPI.userRegisterApi(new User( name, email, phone, password));
+        Call<UserResponse> userRegisterResponseCall = networkAPI.userRegisterApi(new User( name, email, phone, String.valueOf(roleId), password));
 
         userRegisterResponseCall.enqueue(new Callback<UserResponse>() {
             @Override

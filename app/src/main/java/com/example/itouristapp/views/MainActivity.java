@@ -20,8 +20,8 @@ public class MainActivity extends AppCompatActivity {
     private HashMap<String, String> userDetails;
     private AppUtils appUtils;
     private ImageView imageViewMenu;
-    private String strUserName;
-    private TextView tvUserName;
+    private String strUserName, strUserRole;
+    private TextView tvUserName, tvUserRole;
 
 
     @Override
@@ -33,8 +33,11 @@ public class MainActivity extends AppCompatActivity {
         appUtils = new AppUtils(MainActivity.this, this);
         userDetails = appUtils.getUserDetails();
         tvUserName = findViewById(R.id.tv_hello_user);
+        tvUserRole = findViewById(R.id.tv_user_role);
         strUserName = userDetails.get(AppUtils.KEY_USER_NAME);
+        strUserRole = userDetails.get(AppUtils.KEY_USER_ROLE);
         tvUserName.setText("Hey "+strUserName);
+        tvUserRole.setText("Role: "+ (strUserRole.equals("tourist") ? "Tourist" : "Tour Guide"));
 
         imageViewMenu.setOnClickListener(new View.OnClickListener() {
             @Override

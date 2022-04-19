@@ -28,6 +28,7 @@ public class AppUtils {
     public static final String KEY_USER_NAME = "name";
     public static final String KEY_USER_EMAIL = "email";
     public static final String KEY_USER_PHONE = "phone";
+    public static final String KEY_USER_ROLE = "role";
     public static final String KEY_USER_TOKEN = "user_token";
 
     public AppUtils(Context ctx, Activity activity) {
@@ -37,12 +38,13 @@ public class AppUtils {
         editor = pref.edit();
     }
 
-    public void setLoggedIn(boolean loggedIn, String userId ,String name, String email, String phone, String token){
+    public void setLoggedIn(boolean loggedIn, String userId ,String name, String email, String phone, String role, String token){
         editor.putBoolean("loggedInMode", loggedIn);
         editor.putString(KEY_USER_ID, userId);
         editor.putString(KEY_USER_NAME, name);
         editor.putString(KEY_USER_EMAIL, email);
         editor.putString(KEY_USER_PHONE, phone);
+        editor.putString(KEY_USER_ROLE, role);
         editor.putString(KEY_USER_TOKEN, token);
 
         editor.commit();
@@ -62,6 +64,7 @@ public class AppUtils {
         user.put(KEY_USER_EMAIL, pref.getString(KEY_USER_EMAIL, null));
         user.put(KEY_USER_TOKEN, pref.getString(KEY_USER_TOKEN, null));
         user.put(KEY_USER_PHONE, pref.getString(KEY_USER_PHONE, null));
+        user.put(KEY_USER_ROLE, pref.getString(KEY_USER_ROLE, null));
 
         // return user
         return user;

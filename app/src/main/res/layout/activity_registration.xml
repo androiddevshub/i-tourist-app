@@ -22,8 +22,54 @@
             android:layout_marginRight="80dp"
             android:layout_marginTop="50dp"/>
 
-        <TextView
+<!--        <TextView-->
+<!--            android:layout_below="@id/txt_login_before_appointment"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Role"-->
+<!--            android:textStyle="bold"-->
+<!--            android:id="@+id/txt_login_role"-->
+<!--            android:textColor="#8E5983"-->
+<!--            android:textSize="18dp"-->
+<!--            android:layout_marginLeft="25dp"-->
+<!--            android:layout_marginRight="80dp"-->
+<!--            android:layout_marginTop="30dp"/>-->
+
+        <RadioGroup
             android:layout_below="@id/txt_login_before_appointment"
+            android:id="@+id/radio_group_role"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="80dp"
+            android:orientation="horizontal"
+
+            android:layout_marginTop="30dp">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#8E5983"
+                android:textStyle="bold"
+                android:id="@+id/radio_button_tourist"
+                android:textSize="18dp"
+                android:text="Tourist"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textColor="#8E5983"
+                android:id="@+id/radion_button_guide"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                android:text="Tour Guide"/>
+
+
+        </RadioGroup>
+
+        <TextView
+            android:layout_below="@id/radio_group_role"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Name"
@@ -33,7 +79,7 @@
             android:textSize="18dp"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="80dp"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="10dp"/>
 
         <EditText
             android:layout_below="@id/txt_login_name"
@@ -148,6 +194,7 @@
             android:layout_height="60dp"
             android:text="Register"
             android:textSize="18sp"
+            android:layout_marginBottom="30dp"
             app:cornerRadius="20dp"
             app:backgroundTint="#6EC8D8"
             android:id="@+id/btn_register"

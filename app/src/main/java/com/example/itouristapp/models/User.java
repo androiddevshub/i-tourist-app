@@ -21,6 +21,10 @@ public class User {
     @Expose
     private String phone;
 
+    @SerializedName("role")
+    @Expose
+    private String role;
+
     @SerializedName("password")
     @Expose
     private String password;
@@ -32,10 +36,11 @@ public class User {
     public User() {
     }
 
-    public User(String name, String email, String phone, String password) {
+    public User(String name, String email, String phone, String role, String password) {
         this.name = name;
         this.email = email;
         this.phone = phone;
+        this.role = role;
         this.password = password;
     }
 
@@ -74,6 +79,14 @@ public class User {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 
     public String getPassword() {

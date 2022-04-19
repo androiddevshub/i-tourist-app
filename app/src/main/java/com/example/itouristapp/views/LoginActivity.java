@@ -93,6 +93,7 @@ public class LoginActivity extends AppCompatActivity {
                             response.body().getUser().getName(),
                             response.body().getUser().getEmail(),
                             response.body().getUser().getPhone(),
+                            response.body().getUser().getRole(),
                             response.body().getUser().getToken());
 
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
