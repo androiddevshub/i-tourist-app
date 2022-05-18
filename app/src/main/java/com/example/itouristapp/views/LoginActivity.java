@@ -87,10 +87,10 @@ public class LoginActivity extends AppCompatActivity {
                 if (response.isSuccessful()){
                     progressDialog.dismiss();
 
-                    if (response.body().getUser().getActive() == null){
+                    if (response.body().getUser().getRole().equals("guide") && response.body().getUser().getActive() == null){
                         appUtils.showToast("Your profile is getting reviewed");
 
-                    }else if (response.body().getUser().getActive().equals(false)){
+                    }else if (response.body().getUser().getRole().equals("guide") && response.body().getUser().getActive().equals(false)){
                         appUtils.showToast("Sorry, Your profile is rejected");
                     } else{
                         appUtils.showToast(response.body().getMessage());
