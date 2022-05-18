@@ -51,6 +51,12 @@ public class AppUtils {
 
     }
 
+    public void updateProfile(String name, String phone){
+        editor.putString(KEY_USER_NAME, name);
+        editor.putString(KEY_USER_PHONE, phone);
+        editor.commit();
+    }
+
 
     public boolean loggedIn(){
         return pref.getBoolean("loggedInMode", false);

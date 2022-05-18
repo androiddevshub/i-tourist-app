@@ -25,6 +25,10 @@ public class User {
     @Expose
     private String role;
 
+    @SerializedName("active")
+    @Expose
+    private Boolean active;
+
     @SerializedName("password")
     @Expose
     private String password;
@@ -47,6 +51,12 @@ public class User {
     public User(String email, String password) {
         this.email = email;
         this.password = password;
+    }
+
+    public User(String name, String email, String phone) {
+        this.name = name;
+        this.email = email;
+        this.phone = phone;
     }
 
     public String getId() {
@@ -103,5 +113,13 @@ public class User {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 }

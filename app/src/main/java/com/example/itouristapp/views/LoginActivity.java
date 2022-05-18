@@ -86,17 +86,28 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                 if (response.isSuccessful()){
                     progressDialog.dismiss();
-                    appUtils.showToast(response.body().getMessage());
 
-                    appUtils.setLoggedIn(true,
-                            String.valueOf(response.body().getUser().getId()),
-                            response.body().getUser().getName(),
-                            response.body().getUser().getEmail(),
-                            response.body().getUser().getPhone(),
-                            response.body().getUser().getRole(),
-                            response.body().getUser().getToken());
+                    if (response.body().getUser().getActive() == null){
+                        appUtils.showToast("Your profile is getting reviewed");
 
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    }else if (response.body().getUser().getActive().equals(false)){
+                        appUtils.showToast("Sorry, Your profile is rejected");
+                    } else{
+                        appUtils.showToast(response.body().getMessage());
+
+
+                        appUtils.setLoggedIn(true,
+                                String.valueOf(response.body().getUser().getId()),
+                                response.body().getUser().getName(),
+                                response.body().getUser().getEmail(),
+                                response.body().getUser().getPhone(),
+                                response.body().getUser().getRole(),
+                                response.body().getUser().getToken());
+
+                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
+                    }
+
                 }else{
                     progressDialog.dismiss();
                     appUtils.showToast("Something went wrong");

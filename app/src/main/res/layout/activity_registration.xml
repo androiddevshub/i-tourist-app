@@ -144,7 +144,7 @@
             android:id="@+id/et_register_phone"
             android:hint="+96545355345"
             android:drawablePadding="10dp"
-            android:inputType="textEmailAddress"/>
+            android:inputType="phone"/>
 
         <TextView
             android:layout_below="@id/et_register_phone"

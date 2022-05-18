@@ -121,7 +121,12 @@ public class RegistrationActivity extends AppCompatActivity {
                 if (response.body().isStatus()){
                     progressDialog.dismiss();
                     appUtils.showToast(response.body().getMessage());
-                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    if (roleId == 2){
+                        startActivity(new Intent(getApplicationContext(), AdditionalInfoActivity.class));
+                    }else{
+                        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    }
+
                 }
             }
 

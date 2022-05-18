@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
                         appUtils.logoutUser();
                         break;
                     case R.id.profile:
-                        startActivity(new Intent(MainActivity.this, SplashActivity.class));
+                        startActivity(new Intent(MainActivity.this, ProfileActivity.class));
                         break;
                 }
                 return true;
