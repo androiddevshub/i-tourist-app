@@ -2,7 +2,10 @@ package com.example.itouristapp.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.PopupMenu;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -11,9 +14,18 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.itouristapp.R;
+import com.example.itouristapp.models.Trip;
+import com.example.itouristapp.models.responsebean.TripResponse;
+import com.example.itouristapp.utils.ApiClient;
 import com.example.itouristapp.utils.AppUtils;
+import com.example.itouristapp.utils.NetworkAPI;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
     private ImageView imageViewMenu;
     private String strUserName, strUserRole;
     private TextView tvUserName, tvUserRole;
+    private ProgressDialog progressDialog;
+    private RecyclerView recyclerViewTripDetails;
+    private ArrayList<Trip> tripArrayList;
+    private TripDetailsRecyclerAdapter tripDetailsRecyclerAdapter;
 
 
     @Override
@@ -38,6 +54,12 @@ public class MainActivity extends AppCompatActivity {
         strUserRole = userDetails.get(AppUtils.KEY_USER_ROLE);
         tvUserName.setText("Hey "+strUserName);
         tvUserRole.setText("Role: "+ (strUserRole.equals("tourist") ? "Tourist" : "Tour Guide"));
+        if(strUserRole.equals("guide")){
+            findViewById(R.id.layout_trip_recycler).setVisibility(View.VISIBLE);
+        }
+        progressDialog = new ProgressDialog(MainActivity.this);
+
+        recyclerViewTripDetails = findViewById(R.id.trip_details_recyclerview);
 
         imageViewMenu.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +67,10 @@ public class MainActivity extends AppCompatActivity {
                 showPopup(v);
             }
         });
+
+
+
+        getTripDetailsData();
     }
 
     public void showPopup(View v) {
@@ -66,5 +92,27 @@ public class MainActivity extends AppCompatActivity {
         });
 
         popup.show();
+    }
+
+    private void getTripDetailsData(){
+        progressDialog.setMessage("Loading data...");
+        NetworkAPI networkAPI = ApiClient.getClient().create(NetworkAPI.class);
+        Call<TripResponse> tripResponseCall = networkAPI.destinationsApi();
+
+        tripResponseCall.enqueue(new Callback<TripResponse>() {
+            @Override
+            public void onResponse(Call<TripResponse> call, Response<TripResponse> response) {
+                tripArrayList = response.body().getTripArrayList();
+                recyclerViewTripDetails.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false));
+
+                tripDetailsRecyclerAdapter = new TripDetailsRecyclerAdapter(tripArrayList, MainActivity.this);
+                recyclerViewTripDetails.setAdapter(tripDetailsRecyclerAdapter);
+            }
+
+            @Override
+            public void onFailure(Call<TripResponse> call, Throwable t) {
+
+            }
+        });
     }
 }

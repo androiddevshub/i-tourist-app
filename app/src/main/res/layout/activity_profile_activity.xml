@@ -1,127 +1,186 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".views.ProfileActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Update Profile"
-        android:id="@+id/update_profile"
-        android:textColor="#452727"
-        android:textFontWeight="900"
-        android:textSize="30dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="80dp"
-        android:layout_marginTop="30dp"/>
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
 
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/ic_baseline_cancel_24"
-        android:layout_alignParentRight="true"
-        android:id="@+id/close_profile"
-        android:layout_margin="30dp"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Update Profile"
+           android:id="@+id/update_profile"
+           android:textColor="#452727"
+           android:textFontWeight="900"
+           android:textSize="30dp"
+           android:layout_marginLeft="25dp"
+           android:layout_marginRight="80dp"
+           android:layout_marginTop="30dp"/>
 
-    <TextView
-        android:layout_below="@id/update_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Email"
-        android:textStyle="bold"
-        android:id="@+id/txt_profile_email"
-        android:textColor="#8E5983"
-        android:textSize="18dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="80dp"
-        android:layout_marginTop="20dp"/>
+       <ImageView
+           android:id="@+id/close_profile"
+           android:layout_width="30dp"
+           android:layout_height="30dp"
+           android:layout_alignParentRight="true"
+           android:layout_marginStart="30dp"
+           android:layout_marginTop="30dp"
+           android:layout_marginEnd="30dp"
+           android:layout_marginBottom="30dp"
+           android:src="@drawable/ic_baseline_cancel_24" />
 
-    <EditText
-        android:layout_below="@id/txt_profile_email"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/custom_border"
-        android:id="@+id/et_profile_email"
-        android:hint="jessica@xyz.com"
-        android:enabled="false"
-        android:drawablePadding="10dp"
-        android:inputType="textEmailAddress"/>
+       <TextView
+           android:layout_below="@id/update_profile"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="Email"
+           android:textStyle="bold"
+           android:id="@+id/txt_profile_email"
+           android:textColor="#8E5983"
+           android:textSize="18dp"
+           android:layout_marginLeft="25dp"
+           android:layout_marginRight="80dp"
+           android:layout_marginTop="20dp"/>
+
+       <EditText
+           android:layout_below="@id/txt_profile_email"
+           android:layout_marginLeft="25dp"
+           android:layout_marginRight="25dp"
+           android:layout_marginTop="10dp"
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:background="@drawable/custom_border"
+           android:id="@+id/et_profile_email"
+           android:hint="jessica@xyz.com"
+           android:enabled="false"
+           android:drawablePadding="10dp"
+           android:inputType="textEmailAddress"/>
+
+       <TextView
+           android:id="@+id/txt_login_name"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/et_profile_email"
+           android:layout_marginLeft="25dp"
+           android:layout_marginTop="20dp"
+           android:layout_marginRight="80dp"
+           android:text="Name"
+           android:textColor="#8E5983"
+           android:textSize="18dp"
+           android:textStyle="bold" />
+
+       <EditText
+           android:layout_below="@id/txt_login_name"
+           android:layout_marginLeft="25dp"
+           android:layout_marginRight="25dp"
+           android:layout_marginTop="10dp"
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:background="@drawable/custom_border"
+           android:id="@+id/et_profile_name"
+           android:hint="Jessica Johnson"
+           android:drawablePadding="10dp"
+           android:inputType="textEmailAddress"/>
+
+       <TextView
+           android:id="@+id/txt_profile_phone"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/et_profile_name"
+           android:layout_marginLeft="25dp"
+           android:layout_marginTop="20dp"
+           android:layout_marginRight="80dp"
+           android:text="Phone"
+           android:textColor="#8E5983"
+           android:textSize="18dp"
+           android:textStyle="bold" />
+
+       <EditText
+           android:id="@+id/et_profile_phone"
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:layout_below="@id/txt_profile_phone"
+           android:layout_marginLeft="25dp"
+           android:layout_marginTop="10dp"
+           android:layout_marginRight="25dp"
+           android:background="@drawable/custom_border"
+           android:drawablePadding="10dp"
+           android:hint="+96545355345"
+           android:inputType="phone" />
+
+       <TextView
+           android:id="@+id/txt_profile_description"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/et_profile_phone"
+           android:layout_marginLeft="25dp"
+           android:layout_marginTop="20dp"
+           android:layout_marginRight="80dp"
+           android:text="Description"
+           android:textColor="#8E5983"
+           android:textSize="18dp"
+           android:textStyle="bold" />
+
+       <EditText
+           android:id="@+id/et_profile_description"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/txt_profile_description"
+           android:layout_marginLeft="25dp"
+           android:layout_marginTop="10dp"
+           android:layout_marginRight="25dp"
+           android:background="@drawable/custom_border"
+           android:drawablePadding="10dp"
+           android:hint="Write about yourself"
+           android:inputType="phone"
+           android:maxLines="4" />
+
+       <TextView
+           android:id="@+id/txt_profile_languages"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/et_profile_description"
+           android:layout_marginLeft="25dp"
+           android:layout_marginTop="20dp"
+           android:layout_marginRight="80dp"
+           android:text="Languages"
+           android:textColor="#8E5983"
+           android:textSize="18dp"
+           android:textStyle="bold" />
+
+       <EditText
+           android:id="@+id/et_profile_languages"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_below="@id/txt_profile_languages"
+           android:layout_marginLeft="25dp"
+           android:layout_marginTop="10dp"
+           android:layout_marginRight="25dp"
+           android:background="@drawable/custom_border"
+           android:drawablePadding="10dp"
+           android:hint="English, French"
+           android:inputType="phone" />
+
+       <com.google.android.material.button.MaterialButton
+           android:id="@+id/btn_update_profile"
+           android:layout_width="match_parent"
+           android:layout_height="60dp"
+           android:layout_below="@id/et_profile_languages"
+           android:layout_marginLeft="25dp"
+           android:layout_marginTop="40dp"
+           android:layout_marginRight="25dp"
+           android:text="Update"
+           android:textAllCaps="false"
+           android:textSize="18sp"
+           app:backgroundTint="#6EC8D8"
+           app:cornerRadius="20dp" />
+
+   </RelativeLayout>
 
 
-    <TextView
-        android:layout_below="@id/et_profile_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name"
-        android:textStyle="bold"
-        android:id="@+id/txt_login_name"
-        android:textColor="#8E5983"
-        android:textSize="18dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="80dp"
-        android:layout_marginTop="30dp"/>
 
-    <EditText
-        android:layout_below="@id/txt_login_name"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/custom_border"
-        android:id="@+id/et_profile_name"
-        android:hint="Jessica Johnson"
-        android:drawablePadding="10dp"
-        android:inputType="textEmailAddress"/>
-
-
-
-    <TextView
-        android:layout_below="@id/et_profile_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Phone"
-        android:textStyle="bold"
-        android:id="@+id/txt_profile_phone"
-        android:textColor="#8E5983"
-        android:textSize="18dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="80dp"
-        android:layout_marginTop="20dp"/>
-
-    <EditText
-        android:layout_below="@id/txt_profile_phone"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginTop="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/custom_border"
-        android:id="@+id/et_profile_phone"
-        android:hint="+96545355345"
-        android:drawablePadding="10dp"
-        android:inputType="phone"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginTop="40dp"
-        android:layout_below="@id/et_profile_phone"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="Update"
-        android:textSize="18sp"
-        app:cornerRadius="20dp"
-        app:backgroundTint="#6EC8D8"
-        android:id="@+id/btn_update_profile"
-        android:textAllCaps="false"/>
-
-
-
-</RelativeLayout>
+</ScrollView>

@@ -43,16 +43,45 @@
             />
 
         <TextView
+            android:id="@+id/tv_user_role"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Role: Tourist"
             android:layout_below="@id/txt_welcome_msg"
-            android:id="@+id/tv_user_role"
-            android:textColor="#452727"
-            android:textSize="20sp"
-            android:layout_marginTop="30dp"
             android:layout_marginLeft="25dp"
-            />
+            android:layout_marginTop="20dp"
+            android:text="Role: Tourist"
+            android:textColor="#452727"
+            android:textSize="20sp" />
+
+       <LinearLayout
+           android:visibility="invisible"
+           android:id="@+id/layout_trip_recycler"
+           android:layout_below="@id/tv_user_role"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical">
+
+
+           <TextView
+               android:id="@+id/tv_select_trips"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_marginLeft="25dp"
+               android:layout_marginTop="10dp"
+               android:text="Assign trip to yourself"
+               android:textColor="#452727"
+               android:textSize="20sp"
+               android:textStyle="bold" />
+
+           <androidx.recyclerview.widget.RecyclerView
+               android:layout_width="match_parent"
+               android:id="@+id/trip_details_recyclerview"
+               android:layout_height="wrap_content"
+               tools:listitem="@layout/layout_trip">
+
+           </androidx.recyclerview.widget.RecyclerView>
+
+       </LinearLayout>
 
 
     </RelativeLayout>
