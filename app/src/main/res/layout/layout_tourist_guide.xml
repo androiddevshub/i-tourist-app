@@ -22,12 +22,12 @@
             android:id="@+id/card_tg_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/card_tg_dp"
             android:layout_marginTop="20dp"
-            android:textStyle="bold"
-            android:textSize="20sp"
+            android:layout_toRightOf="@id/card_tg_dp"
+            android:text="Tour Guide Name"
             android:textColor="@color/black"
-            android:text="Tour Guide Name"/>
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/card_tg_languages"

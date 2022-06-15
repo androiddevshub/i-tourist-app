@@ -56,7 +56,7 @@ public class TripDetailsRecyclerAdapter extends RecyclerView.Adapter<TripDetails
                 if (userRole.equals("guide")){
                    intent = new Intent(context, TourGuideTripActivity.class);
                 }else{
-                   intent = new Intent(context, TripDetailsActivity.class);
+                   intent = new Intent(context, TouristSelectTripActivity.class);
                 }
 
                 intent.putExtra("trip", trip);

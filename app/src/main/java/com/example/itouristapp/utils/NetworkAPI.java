@@ -1,6 +1,7 @@
 package com.example.itouristapp.utils;
 
 import com.example.itouristapp.models.User;
+import com.example.itouristapp.models.responsebean.TourGuideResponse;
 import com.example.itouristapp.models.responsebean.TripResponse;
 import com.example.itouristapp.models.responsebean.UserResponse;
 
@@ -31,6 +32,9 @@ public interface NetworkAPI {
 
     @GET("/api/tour_guides/{id}/assigned_trips")
     Call<TripResponse> getAssignedTrips(@Path("id") int id);
+
+    @GET("/api/trips/{id}/tour_guides")
+    Call<TourGuideResponse> getTripTourGuides(@Path("id") int id);
 
 
     @GET("/api/destinations")

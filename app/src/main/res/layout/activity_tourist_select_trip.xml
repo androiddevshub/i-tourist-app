@@ -1,93 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <com.mikhaellopez.circularimageview.CircularImageView
-        android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        app:civ_shadow_radius="20dp" />
-
-    <TextView
-        android:id="@+id/tv_guide_trip_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/imageView"
-        android:layout_marginLeft="20dp"
-        android:text="Trip Name"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Destination"
-        android:id="@+id/tv_guide_trip_location"
-        android:layout_below="@id/tv_guide_trip_name"
-        android:textSize="18sp"
-        android:layout_marginLeft="20dp"/>
-
-    <TextView
-        android:id="@+id/tv_guide_trip_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_guide_trip_location"
-        android:layout_marginLeft="20dp"
-        android:text="July 20-24"
-        android:textSize="18sp" />
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout
-        android:id="@+id/single_line"
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_below="@+id/tv_guide_trip_date"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="#E1E0E0" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/text_about_trip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/single_line"
-        android:layout_marginLeft="20dp"
-        android:text="About Trip"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            app:civ_shadow_radius="20dp" />
 
-    <TextView
-        android:id="@+id/tv_guide_trip_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/text_about_trip"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:text="About Trip Description"
-        android:textSize="18sp" />
+        <TextView
+            android:id="@+id/tv_tourist_trip_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView"
+            android:layout_marginLeft="20dp"
+            android:text="Trip Name"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_assign_trip"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_below="@id/tv_guide_trip_description"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="25dp"
-        android:text="Assign to yourself"
-        android:visibility="gone"
-        android:textAllCaps="false"
-        android:textSize="18sp"
-        app:backgroundTint="#6EC8D8"
-        app:cornerRadius="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Destination"
+            android:id="@+id/tv_tourist_trip_location"
+            android:layout_below="@id/tv_tourist_trip_name"
+            android:textSize="18sp"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_tourist_trip_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_tourist_trip_location"
+            android:layout_marginLeft="20dp"
+            android:text="July 20-24"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:id="@+id/single_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv_tourist_trip_date"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="#E1E0E0" />
+
+        <TextView
+            android:id="@+id/text_description_trip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/single_line"
+            android:layout_marginLeft="20dp"
+            android:text="About Trip"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_tourist_trip_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_description_trip"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:text="About Trip Description"
+            android:textSize="18sp" />
 
 
-</RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/single_line_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv_tourist_trip_description"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="#E1E0E0" />
+
+        <TextView
+            android:id="@+id/text_tour_guides_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/single_line_1"
+            android:layout_marginLeft="20dp"
+            android:text="Choose Tourist Guide"
+
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/trip_tour_guides_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_tour_guides_list"
+            tools:listitem="@layout/layout_tourist_guide">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </RelativeLayout>
+
+
+</ScrollView>
