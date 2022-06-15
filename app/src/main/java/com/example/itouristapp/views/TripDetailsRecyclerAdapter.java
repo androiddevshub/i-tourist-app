@@ -20,10 +20,15 @@ public class TripDetailsRecyclerAdapter extends RecyclerView.Adapter<TripDetails
 
     private ArrayList<Trip> tripArrayList;
     private Context context;
+    private String userRole;
+    private String action;
 
-    public TripDetailsRecyclerAdapter(ArrayList<Trip> tripArrayList, Context context) {
+    public TripDetailsRecyclerAdapter(ArrayList<Trip> tripArrayList, Context context, String userRole, String action) {
+        Log.v("in adapter", "constructor");
         this.tripArrayList = tripArrayList;
         this.context = context;
+        this.userRole = userRole;
+        this.action = action;
     }
 
     @NonNull
@@ -47,8 +52,15 @@ public class TripDetailsRecyclerAdapter extends RecyclerView.Adapter<TripDetails
         holder.layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, TripDetailsActivity.class);
+                Intent intent;
+                if (userRole.equals("guide")){
+                   intent = new Intent(context, TourGuideTripActivity.class);
+                }else{
+                   intent = new Intent(context, TripDetailsActivity.class);
+                }
+
                 intent.putExtra("trip", trip);
+                intent.putExtra("action", action);
                 context.startActivity(intent);
             }
         });

@@ -4,10 +4,22 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/layout/activity_additional_info.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_assign_new_trip.xml" value="0.27807971014492755" />
+        <entry key="app/src/main/res/layout/activity_assigned_trips.xml" value="0.10729166666666666" />
+        <entry key="app/src/main/res/layout/activity_booked_trip.xml" value="0.27807971014492755" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17296511627906977" />
         <entry key="app/src/main/res/layout/activity_profile_activity.xml" value="0.26268115942028986" />
+        <entry key="app/src/main/res/layout/activity_registration.xml" value="0.16530797101449277" />
+        <entry key="app/src/main/res/layout/activity_select_guide.xml" value="0.27807971014492755" />
+        <entry key="app/src/main/res/layout/activity_tour_guide_trip.xml" value="0.27807971014492755" />
+        <entry key="app/src/main/res/layout/activity_tourist_select_trip.xml" value="0.209375" />
         <entry key="app/src/main/res/layout/activity_trip.xml" value="0.27807971014492755" />
-        <entry key="app/src/main/res/layout/layout_trip.xml" value="0.26268115942028986" />
+        <entry key="app/src/main/res/layout/activity_trip_guide.xml" value="0.16530797101449277" />
+        <entry key="app/src/main/res/layout/activity_unassigned_trip_list.xml" value="0.10729166666666666" />
+        <entry key="app/src/main/res/layout/custom_toast.xml" value="0.16530797101449277" />
+        <entry key="app/src/main/res/layout/layout_tourist_guide.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/layout_trip.xml" value="0.25" />
       </map>
     </option>
   </component>

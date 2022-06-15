@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="15dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/four_dots"
+            android:layout_margin="10dp"
+            android:id="@+id/card_tg_dp"
+            app:civ_shadow_radius="10dp" />
+
+        <TextView
+            android:id="@+id/card_tg_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/card_tg_dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:text="Tour Guide Name"/>
+
+        <TextView
+            android:id="@+id/card_tg_languages"
+            android:layout_below="@id/card_tg_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/card_tg_dp"
+            android:layout_marginTop="5dp"
+            android:textSize="17sp"
+            android:textColor="@color/black"
+            android:text="English, Arabic"/>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

@@ -30,20 +30,22 @@ public class AppUtils {
     public static final String KEY_USER_PHONE = "phone";
     public static final String KEY_USER_ROLE = "role";
     public static final String KEY_USER_TOKEN = "user_token";
+    public static final String KEY_TOUR_GUIDE_ID = "tour_guide_id";
 
     public AppUtils(Context ctx, Activity activity) {
         this.ctx = ctx;
         this.activity = activity;
-        pref = ctx.getSharedPreferences("beautybounty", Context.MODE_PRIVATE);
+        pref = ctx.getSharedPreferences("itourist", Context.MODE_PRIVATE);
         editor = pref.edit();
     }
 
-    public void setLoggedIn(boolean loggedIn, String userId ,String name, String email, String phone, String role, String token){
+    public void setLoggedIn(boolean loggedIn, String userId ,String name, String email, String phone, String tour_guide_id, String role, String token){
         editor.putBoolean("loggedInMode", loggedIn);
         editor.putString(KEY_USER_ID, userId);
         editor.putString(KEY_USER_NAME, name);
         editor.putString(KEY_USER_EMAIL, email);
         editor.putString(KEY_USER_PHONE, phone);
+        editor.putString(KEY_TOUR_GUIDE_ID, tour_guide_id);
         editor.putString(KEY_USER_ROLE, role);
         editor.putString(KEY_USER_TOKEN, token);
 
@@ -70,6 +72,7 @@ public class AppUtils {
         user.put(KEY_USER_EMAIL, pref.getString(KEY_USER_EMAIL, null));
         user.put(KEY_USER_TOKEN, pref.getString(KEY_USER_TOKEN, null));
         user.put(KEY_USER_PHONE, pref.getString(KEY_USER_PHONE, null));
+        user.put(KEY_TOUR_GUIDE_ID, pref.getString(KEY_TOUR_GUIDE_ID, null));
         user.put(KEY_USER_ROLE, pref.getString(KEY_USER_ROLE, null));
 
         // return user

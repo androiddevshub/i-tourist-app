@@ -18,7 +18,15 @@ public class Trip implements Parcelable {
 
     @SerializedName("location")
     @Expose
-    private Integer location;
+    private String location;
+
+    @SerializedName("description")
+    @Expose
+    private String description;
+
+    @SerializedName("price")
+    @Expose
+    private Integer price;
 
 
     protected Trip(Parcel in) {
@@ -28,10 +36,12 @@ public class Trip implements Parcelable {
             id = in.readInt();
         }
         name = in.readString();
+        location = in.readString();
+        description = in.readString();
         if (in.readByte() == 0) {
-            location = null;
+            price = null;
         } else {
-            location = in.readInt();
+            price = in.readInt();
         }
     }
 
@@ -44,11 +54,13 @@ public class Trip implements Parcelable {
             dest.writeInt(id);
         }
         dest.writeString(name);
-        if (location == null) {
+        dest.writeString(location);
+        dest.writeString(description);
+        if (price == null) {
             dest.writeByte((byte) 0);
         } else {
             dest.writeByte((byte) 1);
-            dest.writeInt(location);
+            dest.writeInt(price);
         }
     }
 
@@ -85,11 +97,27 @@ public class Trip implements Parcelable {
         this.name = name;
     }
 
-    public Integer getLocation() {
+    public String getLocation() {
         return location;
     }
 
-    public void setLocation(Integer location) {
+    public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
     }
 }

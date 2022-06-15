@@ -16,7 +16,7 @@ public class TripDetailsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_trip);
+        setContentView(R.layout.activity_tour_guide_trip);
 
         trip = getIntent().getParcelableExtra("trip");
 

@@ -44,6 +44,7 @@
 
         <TextView
             android:id="@+id/tv_user_role"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/txt_welcome_msg"
@@ -53,35 +54,163 @@
             android:textColor="#452727"
             android:textSize="20sp" />
 
-       <LinearLayout
-           android:visibility="invisible"
-           android:id="@+id/layout_trip_recycler"
-           android:layout_below="@id/tv_user_role"
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:orientation="vertical">
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/layout_trip_list_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_user_role"
+            android:orientation="vertical">
 
 
-           <TextView
-               android:id="@+id/tv_select_trips"
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:layout_marginLeft="25dp"
-               android:layout_marginTop="10dp"
-               android:text="Assign trip to yourself"
-               android:textColor="#452727"
-               android:textSize="20sp"
-               android:textStyle="bold" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/trip_details_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/layout_trip">
 
-           <androidx.recyclerview.widget.RecyclerView
-               android:layout_width="match_parent"
-               android:id="@+id/trip_details_recyclerview"
-               android:layout_height="wrap_content"
-               tools:listitem="@layout/layout_trip">
+            </androidx.recyclerview.widget.RecyclerView>
 
-           </androidx.recyclerview.widget.RecyclerView>
+        </LinearLayout>
 
-       </LinearLayout>
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/layout_options_tour_guides"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_user_role"
+            android:orientation="vertical">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView_assign_new_trips"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:background="#BAB0B0"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:strokeColor="@android:color/black"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/img_food_icon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/img_food_icon"
+                        android:text="Assign trip to yourself"
+                        android:textColor="@android:color/black"
+                        android:textSize="26sp"
+                        android:textStyle="bold" />
+
+
+                </RelativeLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView_assigned_trips"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:background="#BAB0B0"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:strokeColor="@android:color/black"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/img_taxi_icon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/img_taxi_icon"
+                        android:text="Assigned trips"
+                        android:textColor="@android:color/black"
+                        android:textSize="26sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardView_bookings"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:background="#BAB0B0"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:strokeColor="@android:color/black"
+                app:strokeWidth="1dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/img_taxi_icon"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/img_taxi_icon"
+                        android:text="Your Bookings"
+                        android:textColor="@android:color/black"
+                        android:textSize="26sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
 
 
     </RelativeLayout>

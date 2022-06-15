@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/text_assign_new_trips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:text="Assigned Trips"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="22sp" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/assigned_trips_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_assign_new_trips"
+        tools:listitem="@layout/layout_trip">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

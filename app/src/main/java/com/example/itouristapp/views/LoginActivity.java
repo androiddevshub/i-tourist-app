@@ -49,6 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         tvANotRegisteredYet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent(LoginActivity.this, RegistrationActivity.class);
                 startActivity(intent);
             }
@@ -101,6 +102,7 @@ public class LoginActivity extends AppCompatActivity {
                                 response.body().getUser().getName(),
                                 response.body().getUser().getEmail(),
                                 response.body().getUser().getPhone(),
+                                response.body().getUser().getTour_guide_id(),
                                 response.body().getUser().getRole(),
                                 response.body().getUser().getToken());
 

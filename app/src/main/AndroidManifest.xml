@@ -42,6 +42,10 @@
         <activity android:name=".views.RegistrationActivity" />
         <activity android:name=".views.LoginActivity" />
         <activity android:name=".views.MainActivity" />
+        <activity android:name=".views.TripDetailsActivity"/>
+        <activity android:name=".views.UnassignedTripsListActivity" />
+        <activity android:name=".views.TourGuideTripActivity"/>
+        <activity android:name=".views.AssignedTripsActivity"/>
     </application>
 
 </manifest>

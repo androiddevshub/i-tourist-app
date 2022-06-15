@@ -21,6 +21,10 @@ public class User {
     @Expose
     private String phone;
 
+    @SerializedName("tour_guide_id")
+    @Expose
+    private String tour_guide_id;
+
     @SerializedName("role")
     @Expose
     private String role;
@@ -121,5 +125,13 @@ public class User {
 
     public void setActive(Boolean active) {
         this.active = active;
+    }
+
+    public String getTour_guide_id() {
+        return tour_guide_id;
+    }
+
+    public void setTour_guide_id(String tour_guide_id) {
+        this.tour_guide_id = tour_guide_id;
     }
 }

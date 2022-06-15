@@ -34,17 +34,17 @@
         android:layout_marginTop="50dp"/>
 
     <EditText
-        android:layout_below="@id/txt_login_email"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginTop="10dp"
+        android:id="@+id/et_login_email"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_below="@id/txt_login_email"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="25dp"
         android:background="@drawable/custom_border"
-        android:id="@+id/et_login_email"
-        android:hint="something@xyz.com"
         android:drawablePadding="10dp"
-        android:inputType="textEmailAddress"/>
+        android:hint="something@xyz.com"
+        android:inputType="textEmailAddress" />
 
 
     <TextView
@@ -75,31 +75,31 @@
 
 
     <TextView
-        android:layout_below="@id/et_login_password"
+        android:id="@+id/txt_not_registered_yet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/et_login_password"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="80dp"
         android:text="Not registered yet?"
-        android:id="@+id/txt_not_registered_yet"
         android:textColor="#9A4088"
         android:textSize="18dp"
-        android:textStyle="bold"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="80dp"
-        android:layout_marginTop="30dp"/>
+        android:textStyle="bold" />
 
     <com.google.android.material.button.MaterialButton
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginTop="40dp"
-        android:layout_below="@id/txt_not_registered_yet"
+        android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_below="@id/txt_not_registered_yet"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="25dp"
         android:text="Login"
+        android:textAllCaps="false"
         android:textSize="18sp"
-        app:cornerRadius="20dp"
         app:backgroundTint="#6EC8D8"
-        android:id="@+id/btn_login"
-        android:textAllCaps="false"/>
+        app:cornerRadius="20dp" />
 
 
 
