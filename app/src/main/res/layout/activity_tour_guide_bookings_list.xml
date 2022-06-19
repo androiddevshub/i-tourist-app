@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <TextView
+        android:id="@+id/txt_tour_guide_bookings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:text="Bookings"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/text_no_bookings_tour_guide"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_tour_guide_bookings"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
+        android:gravity="center"
+        android:lineHeight="30dp"
+        android:layout_marginRight="30dp"
+        android:text="You don't have any bookings."
+        android:textSize="18sp" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/trip_tour_guide_bookings_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        tools:itemCount="1"
+        android:layout_below="@id/txt_tour_guide_bookings"
+        tools:listitem="@layout/layout_booking">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</RelativeLayout>

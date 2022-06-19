@@ -119,6 +119,7 @@
            android:layout_below="@id/et_profile_phone"
            android:layout_marginLeft="25dp"
            android:layout_marginTop="20dp"
+           android:visibility="gone"
            android:layout_marginRight="80dp"
            android:text="Description"
            android:textColor="#8E5983"
@@ -128,15 +129,17 @@
        <EditText
            android:id="@+id/et_profile_description"
            android:layout_width="match_parent"
-           android:layout_height="wrap_content"
+           android:layout_height="150dp"
            android:layout_below="@id/txt_profile_description"
            android:layout_marginLeft="25dp"
            android:layout_marginTop="10dp"
            android:layout_marginRight="25dp"
            android:background="@drawable/custom_border"
            android:drawablePadding="10dp"
+           android:visibility="gone"
+           android:gravity="start"
            android:hint="Write about yourself"
-           android:inputType="phone"
+           android:inputType="text"
            android:maxLines="4" />
 
        <TextView
@@ -148,6 +151,7 @@
            android:layout_marginTop="20dp"
            android:layout_marginRight="80dp"
            android:text="Languages"
+           android:visibility="gone"
            android:textColor="#8E5983"
            android:textSize="18dp"
            android:textStyle="bold" />
@@ -162,8 +166,9 @@
            android:layout_marginRight="25dp"
            android:background="@drawable/custom_border"
            android:drawablePadding="10dp"
+           android:visibility="gone"
            android:hint="English, French"
-           android:inputType="phone" />
+           android:inputType="text" />
 
        <com.google.android.material.button.MaterialButton
            android:id="@+id/btn_update_profile"

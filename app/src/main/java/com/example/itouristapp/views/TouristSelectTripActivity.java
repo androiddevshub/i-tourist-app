@@ -14,7 +14,6 @@ import com.example.itouristapp.R;
 import com.example.itouristapp.models.TourGuide;
 import com.example.itouristapp.models.Trip;
 import com.example.itouristapp.models.responsebean.TourGuideResponse;
-import com.example.itouristapp.models.responsebean.TripResponse;
 import com.example.itouristapp.utils.ApiClient;
 import com.example.itouristapp.utils.NetworkAPI;
 
@@ -27,11 +26,11 @@ import retrofit2.Response;
 public class TouristSelectTripActivity extends AppCompatActivity {
 
 
-    private TextView tvTouristTripName, tvTouristTripLocation, tvTouristTripDates, tvTouristTripDescription;
+    private TextView tvTouristTripName, tvTouristTripLocation, tvTouristTripDescription;
     private Trip trip;
     private ProgressDialog progressDialog;
 
-    private TouristGuidesRecyclerAdapter touristGuidesRecyclerAdapter;
+    private TourGuidesRecyclerAdapter tourGuidesRecyclerAdapter;
     private RecyclerView tripTourGuidesRecyclerView;
     private ArrayList<TourGuide> tourGuideArrayList;
 
@@ -46,7 +45,6 @@ public class TouristSelectTripActivity extends AppCompatActivity {
 
         tvTouristTripName = findViewById(R.id.tv_tourist_trip_name);
         tvTouristTripLocation = findViewById(R.id.tv_tourist_trip_location);
-        tvTouristTripDates = findViewById(R.id.tv_tourist_trip_date);
         tvTouristTripDescription = findViewById(R.id.tv_tourist_trip_description);
         tripTourGuidesRecyclerView = findViewById(R.id.trip_tour_guides_recyclerview);
 
@@ -75,9 +73,9 @@ public class TouristSelectTripActivity extends AppCompatActivity {
                     tripTourGuidesRecyclerView.setLayoutManager(new LinearLayoutManager(TouristSelectTripActivity.this, LinearLayoutManager.VERTICAL, false));
 
 
-                    touristGuidesRecyclerAdapter = new TouristGuidesRecyclerAdapter(tourGuideArrayList, TouristSelectTripActivity.this);
+                    tourGuidesRecyclerAdapter = new TourGuidesRecyclerAdapter(tourGuideArrayList, TouristSelectTripActivity.this, trip.getId());
 
-                    tripTourGuidesRecyclerView.setAdapter(touristGuidesRecyclerAdapter);
+                    tripTourGuidesRecyclerView.setAdapter(tourGuidesRecyclerAdapter);
                     progressDialog.dismiss();
                 }else{
                     Log.v("something happened", response.toString());

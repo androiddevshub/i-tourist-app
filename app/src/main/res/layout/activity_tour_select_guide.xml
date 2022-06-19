@@ -10,41 +10,43 @@
         android:layout_height="wrap_content">
 
         <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/card_select_tg_dp"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:src="@drawable/four_dots"
-            android:layout_margin="30dp"
             android:layout_centerHorizontal="true"
-            android:id="@+id/card_select_tg_dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/ic_baseline_person_24"
             app:civ_shadow_radius="10dp" />
 
         <TextView
-            android:layout_below="@id/card_select_tg_dp"
-            android:id="@+id/card_select_tg_name"
+            android:id="@+id/tv_select_tg_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_below="@id/card_select_tg_dp"
             android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
             android:text="Tour Guide Name"
             android:textColor="@color/black"
-            android:textSize="25sp"
-            android:textStyle="bold" />
+            android:textSize="23sp" />
 
         <TextView
-            android:id="@+id/card_select_tg_languages"
+            android:id="@+id/tv_select_tg_languages"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/card_select_tg_name"
+            android:layout_below="@id/tv_select_tg_name"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="5dp"
             android:text="English, Arabic"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
 
         <RelativeLayout
             android:id="@+id/single_line"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:layout_below="@+id/card_select_tg_languages"
+            android:layout_below="@+id/tv_select_tg_languages"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
@@ -70,10 +72,11 @@
             android:layout_marginLeft="20dp"
             android:text="About Tour Guide"
             android:textColor="@color/black"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tv_about_guide"
+            android:id="@+id/tv_select_tg_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/text_about_guide"
@@ -81,16 +84,51 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:text="About Tour Guide Description"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:id="@+id/single_line_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv_select_tg_description"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="#E1E0E0" />
+
+        <TextView
+            android:id="@+id/text_reviews_guide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/single_line_1"
+            android:layout_marginLeft="20dp"
+            android:text="Reviews"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tour_guides_reviews_recyclerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_reviews_guide"
+            android:layout_marginTop="10dp"
+            tools:itemCount="3"
+            tools:listitem="@layout/layout_tour_guide_review">
+
+        </androidx.recyclerview.widget.RecyclerView>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_cancel_trip"
+            android:id="@+id/btn_book_trip"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:layout_below="@+id/tv_about_guide"
+            android:layout_below="@+id/tour_guides_reviews_recyclerview"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="40dp"
             android:layout_marginRight="25dp"
+            android:layout_marginBottom="30dp"
             android:text="Book trip"
             android:textAllCaps="false"
             android:textSize="18sp"

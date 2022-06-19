@@ -12,14 +12,23 @@
         <entry key="app/src/main/res/layout/activity_profile_activity.xml" value="0.26268115942028986" />
         <entry key="app/src/main/res/layout/activity_registration.xml" value="0.16530797101449277" />
         <entry key="app/src/main/res/layout/activity_select_guide.xml" value="0.27807971014492755" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.23596014492753623" />
+        <entry key="app/src/main/res/layout/activity_tour_guide_booking.xml" value="0.27807971014492755" />
+        <entry key="app/src/main/res/layout/activity_tour_guide_bookings_list.xml" value="0.27807971014492755" />
         <entry key="app/src/main/res/layout/activity_tour_guide_trip.xml" value="0.27807971014492755" />
+        <entry key="app/src/main/res/layout/activity_tour_select_guide.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_tourist_booking.xml" value="0.27807971014492755" />
+        <entry key="app/src/main/res/layout/activity_tourist_bookings_list.xml" value="0.27807971014492755" />
         <entry key="app/src/main/res/layout/activity_tourist_select_trip.xml" value="0.209375" />
         <entry key="app/src/main/res/layout/activity_trip.xml" value="0.27807971014492755" />
         <entry key="app/src/main/res/layout/activity_trip_guide.xml" value="0.16530797101449277" />
         <entry key="app/src/main/res/layout/activity_unassigned_trip_list.xml" value="0.10729166666666666" />
         <entry key="app/src/main/res/layout/custom_toast.xml" value="0.16530797101449277" />
+        <entry key="app/src/main/res/layout/layout_booking.xml" value="0.27807971014492755" />
+        <entry key="app/src/main/res/layout/layout_tour_guide_review.xml" value="0.27807971014492755" />
         <entry key="app/src/main/res/layout/layout_tourist_guide.xml" value="0.25" />
         <entry key="app/src/main/res/layout/layout_trip.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/main_menu.xml" value="0.19427083333333334" />
       </map>
     </option>
   </component>

@@ -82,6 +82,8 @@ public class MainActivity extends AppCompatActivity {
         mCardViewAssignNewTrip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                // intent is being used for taking from one activity to another
                 startActivity(new Intent(MainActivity.this, UnassignedTripsListActivity.class));
             }
         });
@@ -92,8 +94,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, AssignedTripsActivity.class));
             }
         });
+
+        mCardViewGuideBookings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, TourGuideBookingsListActivity.class));
+            }
+        });
     }
 
+    // function for showing up popup menu
     public void showPopup(View v) {
         PopupMenu popup = new PopupMenu(this, v);
         popup.getMenuInflater().inflate(R.menu.main_menu, popup.getMenu());
@@ -107,6 +117,11 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.profile:
                         startActivity(new Intent(MainActivity.this, ProfileActivity.class));
                         break;
+                    case R.id.bookings:
+                        if(strUserRole.equals("tourist")){
+                            startActivity(new Intent(MainActivity.this, TouristBookingsListActivity.class));
+                        }
+                        break;
                 }
                 return true;
             }
@@ -115,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
         popup.show();
     }
 
+    // function for getting trip data
     private void getTripDetailsData(){
         progressDialog.setMessage("Loading data...");
         progressDialog.show();

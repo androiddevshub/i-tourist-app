@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardCornerRadius="10dp"
-    android:layout_margin="15dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
@@ -12,36 +14,37 @@
 
         <com.mikhaellopez.circularimageview.CircularImageView
             android:id="@+id/card_tg_dp"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/four_dots"
+            android:src="@drawable/ic_baseline_person_24"
             app:civ_shadow_radius="10dp" />
 
         <TextView
-            android:id="@+id/card_tg_name"
+            android:id="@+id/tv_review_user_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_toRightOf="@id/card_tg_dp"
             android:text="Tour Guide Name"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/card_tg_languages"
-            android:layout_below="@id/card_tg_name"
+            android:id="@+id/tv_review_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/card_tg_dp"
+            android:layout_below="@id/tv_review_user_name"
             android:layout_marginTop="5dp"
-            android:textSize="17sp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginRight="20dp"
+            android:layout_toRightOf="@id/card_tg_dp"
+            android:text="Review Description"
+
             android:textColor="@color/black"
-            android:text="English, Arabic"/>
+            android:textSize="17sp" />
 
     </RelativeLayout>
 

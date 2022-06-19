@@ -24,6 +24,7 @@ public class AppUtils {
     Activity activity;
 
 
+
     public static final String KEY_USER_ID = "user_id";
     public static final String KEY_USER_NAME = "name";
     public static final String KEY_USER_EMAIL = "email";
@@ -31,6 +32,8 @@ public class AppUtils {
     public static final String KEY_USER_ROLE = "role";
     public static final String KEY_USER_TOKEN = "user_token";
     public static final String KEY_TOUR_GUIDE_ID = "tour_guide_id";
+    public static final String KEY_TOUR_GUIDE_DESCRIPTION = "tour_guide_description";
+    public static final String KEY_TOUR_GUIDE_LANGUAGES = "tour_guide_languages";
 
     public AppUtils(Context ctx, Activity activity) {
         this.ctx = ctx;
@@ -39,7 +42,8 @@ public class AppUtils {
         editor = pref.edit();
     }
 
-    public void setLoggedIn(boolean loggedIn, String userId ,String name, String email, String phone, String tour_guide_id, String role, String token){
+    // function for setting up signed in user
+    public void setLoggedIn(boolean loggedIn, String userId ,String name, String email, String phone, String tour_guide_id, String role, String token, String description, String languages){
         editor.putBoolean("loggedInMode", loggedIn);
         editor.putString(KEY_USER_ID, userId);
         editor.putString(KEY_USER_NAME, name);
@@ -48,14 +52,19 @@ public class AppUtils {
         editor.putString(KEY_TOUR_GUIDE_ID, tour_guide_id);
         editor.putString(KEY_USER_ROLE, role);
         editor.putString(KEY_USER_TOKEN, token);
+        editor.putString(KEY_TOUR_GUIDE_DESCRIPTION, description);
+        editor.putString(KEY_TOUR_GUIDE_LANGUAGES, languages);
 
         editor.commit();
 
     }
 
-    public void updateProfile(String name, String phone){
+    // function for updating details
+    public void updateProfile(String name, String phone, String description, String languages){
         editor.putString(KEY_USER_NAME, name);
         editor.putString(KEY_USER_PHONE, phone);
+        editor.putString(KEY_TOUR_GUIDE_DESCRIPTION, description);
+        editor.putString(KEY_TOUR_GUIDE_LANGUAGES, languages);
         editor.commit();
     }
 
@@ -64,6 +73,7 @@ public class AppUtils {
         return pref.getBoolean("loggedInMode", false);
     }
 
+    // function for getting user details
     public HashMap<String, String> getUserDetails(){
         HashMap<String, String> user = new HashMap<String, String>();
         // user email id
@@ -74,11 +84,14 @@ public class AppUtils {
         user.put(KEY_USER_PHONE, pref.getString(KEY_USER_PHONE, null));
         user.put(KEY_TOUR_GUIDE_ID, pref.getString(KEY_TOUR_GUIDE_ID, null));
         user.put(KEY_USER_ROLE, pref.getString(KEY_USER_ROLE, null));
+        user.put(KEY_TOUR_GUIDE_DESCRIPTION, pref.getString(KEY_TOUR_GUIDE_DESCRIPTION, null));
+        user.put(KEY_TOUR_GUIDE_LANGUAGES, pref.getString(KEY_TOUR_GUIDE_LANGUAGES, null));
 
         // return user
         return user;
     }
 
+    // function for logging out user
     public void logoutUser(){
         // Clearing all data from Shared Preferences
         editor.clear();
@@ -96,6 +109,7 @@ public class AppUtils {
         ctx.startActivity(i);
     }
 
+    // function for showing toast
     public void showToast(String msg){
         LayoutInflater inflater =  (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View layout = inflater.inflate(R.layout.custom_toast,

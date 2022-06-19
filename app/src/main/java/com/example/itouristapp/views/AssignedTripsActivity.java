@@ -49,6 +49,7 @@ public class AssignedTripsActivity extends AppCompatActivity {
         getAssignedTripDetails();
     }
 
+    // function for getting assigned  trips data
     private void getAssignedTripDetails(){
         progressDialog.setMessage("Loading data...");
         progressDialog.show();
@@ -60,12 +61,10 @@ public class AssignedTripsActivity extends AppCompatActivity {
                 if (response.isSuccessful()){
                     tripArrayList = response.body().getTripArrayList();
 
+                    // setting up recycler view to get data in form of list
+
                     recyclerViewTripDetails.setLayoutManager(new LinearLayoutManager(AssignedTripsActivity.this, LinearLayoutManager.VERTICAL, false));
-
-                    Log.v("destinations data", tripArrayList.toString());
-
                     tripDetailsRecyclerAdapter = new TripDetailsRecyclerAdapter(tripArrayList, AssignedTripsActivity.this, userRole, "assigned");
-
                     recyclerViewTripDetails.setAdapter(tripDetailsRecyclerAdapter);
                     progressDialog.dismiss();
                 }else{

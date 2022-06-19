@@ -46,7 +46,11 @@
         <activity android:name=".views.UnassignedTripsListActivity" />
         <activity android:name=".views.TourGuideTripActivity"/>
         <activity android:name=".views.AssignedTripsActivity"/>
-        <activity android:name=".views.SelectGuideActivity" />
+        <activity android:name=".views.SelectTourGuideActivity" />
+        <activity android:name=".views.TouristBookingActivity"/>
+        <activity android:name=".views.TourGuideBookingActivity"/>
+        <activity android:name=".views.TouristBookingsListActivity"/>
+        <activity android:name=".views.TourGuideBookingsListActivity"/>
     </application>
 
 </manifest>

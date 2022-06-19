@@ -24,6 +24,8 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
+    // declaring required views
+
     private TextView tvANotRegisteredYet;
     private EditText etEmail, etPassword;
     private String email, password;
@@ -35,6 +37,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        // initializing required views
 
         progressDialog = new ProgressDialog(LoginActivity.this);
         appUtils = new AppUtils(getApplicationContext(), this);
@@ -55,6 +59,7 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        // clicking login button here
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,6 +78,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    // function for logging in
     private void userLoginFun(){
 
         progressDialog.setMessage("Logging In");
@@ -104,7 +110,9 @@ public class LoginActivity extends AppCompatActivity {
                                 response.body().getUser().getPhone(),
                                 response.body().getUser().getTour_guide_id(),
                                 response.body().getUser().getRole(),
-                                response.body().getUser().getToken());
+                                response.body().getUser().getToken(),
+                                response.body().getUser().getDescription(),
+                                response.body().getUser().getLanguages());
 
                         startActivity(new Intent(LoginActivity.this, MainActivity.class));
 

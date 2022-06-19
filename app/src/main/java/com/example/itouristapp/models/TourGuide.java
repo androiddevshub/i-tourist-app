@@ -10,7 +10,7 @@ public class TourGuide implements Parcelable{
 
     @SerializedName("id")
     @Expose
-    private String id;
+    private Integer id;
 
     @SerializedName("name")
     @Expose
@@ -26,7 +26,11 @@ public class TourGuide implements Parcelable{
 
 
     protected TourGuide(Parcel in) {
-        id = in.readString();
+        if (in.readByte() == 0) {
+            id = null;
+        } else {
+            id = in.readInt();
+        }
         name = in.readString();
         description = in.readString();
         languages = in.readString();
@@ -34,7 +38,12 @@ public class TourGuide implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(id);
+        if (id == null) {
+            dest.writeByte((byte) 0);
+        } else {
+            dest.writeByte((byte) 1);
+            dest.writeInt(id);
+        }
         dest.writeString(name);
         dest.writeString(description);
         dest.writeString(languages);
@@ -57,11 +66,11 @@ public class TourGuide implements Parcelable{
         }
     };
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

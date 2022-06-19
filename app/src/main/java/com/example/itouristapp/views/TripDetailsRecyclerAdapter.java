@@ -44,8 +44,6 @@ public class TripDetailsRecyclerAdapter extends RecyclerView.Adapter<TripDetails
     public void onBindViewHolder(@NonNull TripDetailsViewHolder holder, int position) {
         Trip trip = tripArrayList.get(position);
 
-        Log.v("in adapter", "yes yes");
-
         holder.name.setText(trip.getName());
         holder.location.setText(trip.getLocation());
 

@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
     public static final String REMOTE_BASE_URL = "http://35.88.198.232:3000/";
-    public static final String LOCAL_BASE_URL = "http://192.168.1.75:3000/";
+
     private static Retrofit retrofit = null;
 
     // This function is used for showing the logs for the API

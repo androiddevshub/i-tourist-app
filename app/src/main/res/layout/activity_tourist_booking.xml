@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:src="@drawable/dummy_placeholder"
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="20dp"
+            app:civ_shadow_radius="20dp" />
+
+        <TextView
+            android:id="@+id/tv_tourist_trip_name_booking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imageView"
+            android:layout_marginLeft="20dp"
+            android:text="Trip Name"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_tourist_trip_location_booking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_tourist_trip_name_booking"
+            android:layout_marginLeft="20dp"
+            android:text="Location"
+            android:textSize="18sp" />
+
+
+        <RelativeLayout
+            android:id="@+id/single_line"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv_tourist_trip_location_booking"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="#E1E0E0" />
+
+        <TextView
+            android:id="@+id/text_description_trip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/single_line"
+            android:layout_marginLeft="20dp"
+            android:text="About Trip"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_tourist_trip_description_booking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_description_trip"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:text="About Trip Description"
+            android:textSize="18sp" />
+
+
+        <RelativeLayout
+            android:id="@+id/single_line_1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv_tourist_trip_description_booking"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="#E1E0E0" />
+
+        <TextView
+            android:id="@+id/text_tour_guide_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/single_line_1"
+            android:layout_marginLeft="20dp"
+            android:text="Tour Guide Information"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_booking_tour_guide_name_booking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_tour_guide_info"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:text="Name"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_booking_tour_guide_phone_booking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_booking_tour_guide_name_booking"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:text="Phone"
+            android:textSize="18sp" />
+
+        <RelativeLayout
+            android:id="@+id/single_line_2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_below="@+id/tv_booking_tour_guide_phone_booking"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="#E1E0E0" />
+
+
+        <TextView
+            android:id="@+id/text_tour_guide_write_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/single_line_2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="20dp"
+            android:text="Write a review "
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/et_write_review"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_below="@id/text_tour_guide_write_review"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="25dp"
+            android:background="@drawable/custom_border"
+            android:drawablePadding="10dp"
+            android:gravity="start"
+            android:hint="Review for the tour guide "
+            android:inputType="text"
+            android:maxLines="4" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_submit_review"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/et_write_review"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="30dp"
+            android:text="Submit"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            app:backgroundTint="#6EC8D8"
+            app:cornerRadius="20dp" />
+
+
+
+    </RelativeLayout>
+
+
+</ScrollView>
